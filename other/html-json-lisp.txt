@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>hello</title>
+        <script src="foo.js"></script>
+    </head>
+    <body>
+        <h1 class="h1">Welcome!</h1>
+        <p>My heart will go on.</p>
+        <form action="/login">
+            <input type="text" value="username"></input>
+            <input type="text" value="password"></input>
+        </form>
+    </body>
+</html>
+
+html:{
+    head:{
+        title: {content: "hello"},
+        script: {src: "foo.js"}
+    },
+    body:{
+    h1: {content: "Welcome!", class:"h1"},
+    p:  {content: "My heart will go on."},
+    form: {
+        action: "/login",
+        content:{
+            input: {type: "text", name: "username"},
+            input: {type: "text", name: "password"}
+        }
+    }
+  }
+}
+
+(html
+    (head
+        (title  :content "hello")
+        (script :src "foo.js")
+    )
+    (body
+        (h1 :content "Welcome!" :clazz "h1")
+        (p  :content "My heart will go on.")
+        (form 
+            :action "/login" 
+            :content (
+                (input :type "text" :name "username")
+                (input :type "text" :name "password")
+            )
+        )
+    )
+)
